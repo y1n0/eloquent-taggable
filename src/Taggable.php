@@ -202,6 +202,18 @@ trait Taggable
     }
 
     /**
+     * Retag the model with a delimited string.
+     *
+     * @param string|array $tags
+     *
+     * @return self
+     */
+    public function setTagListAttribute($tags): self
+    {
+        return $this->detag()->tag($tags);
+    }
+
+    /**
      * Get all normalized tags of a model as a delimited string.
      *
      * @return string
